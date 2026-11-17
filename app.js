@@ -489,13 +489,13 @@
     var shownThemes = themeList.slice(0, HOME_LIMIT);
     var shownOpps = opportunityList.slice(0, HOME_LIMIT);
     var shownSignals = signalList.slice(0, HOME_LIMIT);
-    var updated = site().updated ? '<p class="updated">更新于 ' + esc(site().updated) + '</p>' : '';
+    var updated = site().updated ? '<p class="freshness">最后更新：' + esc(site().updated) + '</p>' : '';
     return shell(
       '<header class="hero">'
+      + updated
       + '<p class="kicker">宏观判断笔记</p>'
       + '<h1>宏信号</h1>'
       + '<p class="lede">把访谈拆成可以核对的信号，再串成主线和机会。记的是判断，不是行情。</p>'
-      + updated
       + '<p class="disclaimer">' + esc(disclaimer()) + '</p>'
       + '</header>'
       + '<section class="section"><div class="section-head"><h2>主线</h2>'
