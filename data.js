@@ -158,16 +158,199 @@
  *   }
  */
 window.SITE = {
-  updated: 'YYYY-MM-DD HH:mm (北京时间)',
+  updated: '2026-11-17 16:30 (北京时间)',
   disclaimer: '嘉宾观点≠事实；本站推演仅供参考，不构成买卖建议；未接入实时行情。',
 };
 
-window.THEMES = [];
+window.THEMES = [
+  {
+    id: 't-refining',
+    title: '关键矿产卡在“精炼+电力”',
+    summary: '资源不缺，缺的是精炼产能和便宜电力。谁拿到政府兜底（拨款、价格底线、电价补贴），谁就是这轮供应链重建的赢家。',
+    direction: '强化',
+    updated: '2026-11-17',
+    signalIds: ['s-mcg-1', 's-mcg-2', 's-mcg-3', 's-mcg-4'],
+  },
+  {
+    id: 't-fiscal',
+    title: '美国财政透支→硬资产',
+    summary: '战争与赤字靠借钱维持，嘉宾认为账单迟早到期，利好黄金白银。观点带立场，需看美债数据验证。',
+    direction: '待观察',
+    updated: '2026-11-17',
+    signalIds: ['s-mcg-5'],
+  },
+];
 
-window.OPPORTUNITIES = [];
+window.OPPORTUNITIES = [
+  {
+    id: 'o-west-refining',
+    title: '西方稀土/关键金属精炼（有政府兜底的）',
+    assets: [
+      { name: 'MP Materials', code: 'MP', market: '美股' },
+      { name: 'Lynas Rare Earths', code: 'LYC', market: '澳股' },
+      { name: 'Energy Fuels', code: 'UUUU', market: '美股' },
+    ],
+    thesis: '美国把关键矿产当国防问题，真正的缺口是精炼。获得国防部入股、价格底线或包销的精炼商最先受益；没有政府合同的概念股风险大。',
+    successRate: '中',
+    riskReward: '约1:2',
+    horizon: '2–4年',
+    trigger: '国会通过精炼专项拨款、更多价格底线协议、配套电价补贴',
+    invalidation: '中国大幅放开稀土出口导致价格暴跌，或美国补贴缩水/搁置',
+    status: '观察',
+    themeId: 't-refining',
+    signalIds: ['s-mcg-1', 's-mcg-2', 's-mcg-4'],
+    updated: '2026-11-17',
+  },
+  {
+    id: 'o-scrap-copper',
+    title: '美国本土再生铜/废铜精炼',
+    assets: [
+      { name: 'Sims Limited', code: 'SGM', market: '澳股' },
+      { name: 'Freeport-McMoRan（铜价敞口）', code: 'FCX', market: '美股' },
+    ],
+    thesis: '若美国限制废铜外流并推动本土回收精炼，再生铜环节会从“出口原料”变成“本土战略资产”。目前只是嘉宾提示，标的需进一步筛选。',
+    successRate: '中低',
+    riskReward: '约1:2',
+    horizon: '1–3年',
+    trigger: '废铜出口限制或回收激励政策落地',
+    invalidation: '政策无下文，铜价大幅回落',
+    status: '观察',
+    themeId: 't-refining',
+    signalIds: ['s-mcg-3'],
+    updated: '2026-11-17',
+  },
+];
 
-window.SIGNALS = [];
+window.SIGNALS = [
+  {
+    id: 's-mcg-1',
+    date: '2026-11-17',
+    guestId: 'mcgregor',
+    interviewId: '2026-11-17-mcgregor',
+    text: '美国关键矿产的瓶颈在精炼，不在资源；必须建精炼厂并拨款',
+    type: '观点',
+    forwardLooking: true,
+    winners: '获政府支持的西方稀土/金属精炼商',
+    losers: '无精炼能力的纯勘探矿企',
+    verifyBy: '2027年：国会是否通过精炼专项拨款或扩大国防部采购',
+    outcome: '待验证',
+  },
+  {
+    id: 's-mcg-2',
+    date: '2026-11-17',
+    guestId: 'mcgregor',
+    interviewId: '2026-11-17-mcgregor',
+    text: '建精炼厂要同时补贴电价，电力是文明命脉，便宜能源和便宜信贷绑在一起',
+    type: '暗示',
+    forwardLooking: true,
+    winners: '发电、电网、核电与燃气电厂相关',
+    losers: '高电价地区的冶炼项目',
+    verifyBy: '看关键矿产政策是否附带电价/能源补贴条款',
+    outcome: '待验证',
+  },
+  {
+    id: 's-mcg-3',
+    date: '2026-11-17',
+    guestId: 'mcgregor',
+    interviewId: '2026-11-17-mcgregor',
+    text: '废铜回收是被忽视的铜来源，没人在研究废铜精炼厂选址',
+    type: '暗示',
+    forwardLooking: true,
+    winners: '美国本土再生铜/废金属回收与精炼企业',
+    losers: '依赖向中国出口废铜的贸易商',
+    verifyBy: '美国是否出台废铜回收激励或限制出口措施',
+    outcome: '待验证',
+  },
+  {
+    id: 's-mcg-4',
+    date: '2026-11-17',
+    guestId: 'mcgregor',
+    interviewId: '2026-11-17-mcgregor',
+    text: '需要政府与私人资本合作建精炼厂，并锁定价格，投资者才敢进；目前国防部投入只是零头，建议先观望',
+    type: '观点',
+    forwardLooking: true,
+    winners: '拿到价格底线/包销协议的企业',
+    losers: '只讲概念、没有政府合同的公司',
+    verifyBy: '更多类似“国防部入股+价格底线”的交易出现',
+    outcome: '待验证',
+  },
+  {
+    id: 's-mcg-5',
+    date: '2026-11-17',
+    guestId: 'mcgregor',
+    interviewId: '2026-11-17-mcgregor',
+    text: '美国财政接近“货币深渊”，战争开支靠借钱，账单迟早到期',
+    type: '观点',
+    forwardLooking: true,
+    winners: '黄金、白银等硬资产',
+    losers: '长期美债持有人',
+    verifyBy: '美债长端收益率与拍卖认购情况；黄金走势',
+    outcome: '待验证',
+  },
+];
 
-window.INTERVIEWS = [];
+window.INTERVIEWS = [
+  {
+    id: '2026-11-17-mcgregor',
+    date: '2026-11-17',
+    channel: 'Kitco Mining（德国黄金展现场）',
+    guestId: 'mcgregor',
+    title: '美国关键矿产的真瓶颈：不是矿，是精炼和电',
+    url: '',
+    oneLine: '美国缺的不是稀土和铜矿，而是精炼厂和便宜电力；政府投入远远不够，投资者先观望，等真金白银的政策落地。',
+    conclusion: [
+      '稀土/铜/锂对美国是“精炼问题”而非资源问题，约九成稀土要送中国精炼',
+      '建精炼厂必须同时补贴电价，否则拼不过中国的电力与人工成本',
+      '废铜回收是被忽视的铜来源，几乎没人研究在哪建废铜精炼厂',
+      '需要政府与私人资本合作，并锁定价格（价格稳定）才有人敢投',
+      '金银在军工电子、导弹制导中不可替代',
+      '投资建议：欢迎这一趋势，但“先把火药留着”，等更实质的政策证据',
+    ],
+    capitalLogic: '谁占便宜：拿到国防部/政府长约、价格底线和电价补贴的西方精炼商；中国在被替代前继续靠精炼垄断赚加工费并握有筹码；加拿大、墨西哥、南美这些资源国议价力上升。谁吃亏：纯靠“关键矿产概念”炒作、没有精炼和政府背书的小矿企；美国纳税人（补贴成本）；地方环保阵营（最终被收入和政治交换收买）。华尔街的考量：只做有政府兜底（价格底线、包销、贷款担保）的项目，把风险转嫁给财政；欧洲资本同样缺精炼产能，更可能跟进联合投资而非单干。长周期看：资源民族主义+供应链安全，让“精炼与电力”成为新的战略资产，财政赤字则继续支撑硬资产。',
+    facts: [
+      {
+        claim: '约92%的稀土要送中国精炼',
+        check: '国际能源署等口径：中国约占全球稀土精炼/分离产能的九成左右',
+        verdict: '基本属实',
+      },
+      {
+        claim: '中国发电能力3.1太瓦，美国1.1太瓦',
+        check: '公开数据：中国装机容量约3.3太瓦以上，美国约1.3太瓦；量级与差距方向正确',
+        verdict: '大致属实（数字偏旧）',
+      },
+      {
+        claim: '2001–2022年美国战争花费约8万亿美元，全部靠借钱',
+        check: '布朗大学“战争成本”项目估算约8万亿美元；“全部借钱”属嘉宾说法',
+        verdict: '金额属实，后半句是观点',
+      },
+      {
+        claim: '特朗普禁止向中国出口废铜',
+        check: '未找到确认，需核实',
+        verdict: '待核实',
+      },
+      {
+        claim: '没人再买美债，大家在抛售',
+        check: '海外持有占比下降，但美债拍卖仍有需求',
+        verdict: '夸大',
+      },
+    ],
+    signalIds: ['s-mcg-1', 's-mcg-2', 's-mcg-3', 's-mcg-4', 's-mcg-5'],
+  },
+];
 
-window.GUESTS = [];
+window.GUESTS = [
+  {
+    id: 'mcgregor',
+    name: 'Douglas Macgregor（道格拉斯·麦格雷戈）',
+    role: '美国陆军退役上校、前五角大楼顾问、军事评论员',
+    stance: '坚定反干预主义；看空美国财政与军力；认为两党都被战争游说集团绑架',
+    style: '军人式直白断言，大量类比和反问，宏观叙事强、投资细节弱，常把议题拉回反战与美国霸权衰落',
+    biases: '强烈反战/反以色列游说立场，常用夸张说法（如“没人再买美债”）；地缘判断带明显立场色彩，数据需逐条核实',
+    trackRecord: { hit: 0, miss: 0, pending: 3 },
+    notes: [
+      '第一次收录：法兰克福德国黄金展 Kitco Mining 现场访谈',
+      '有用的是产业链判断（精炼、电力、废铜），政治攻击部分不收录',
+    ],
+    interviewIds: ['2026-11-17-mcgregor'],
+  },
+];
